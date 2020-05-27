@@ -10,7 +10,7 @@ import numpy as np
 bounds = [-10, 10]
 
 class testfunction:
-    # Circle function 2D
+    # Matyas function 2D
     dims = 2
     bounds = bounds
     
@@ -18,7 +18,7 @@ class testfunction:
         # Static Method for Rastrigin function
         x1 = vector[0]
         x2 = vector[1]
-        fx = x1**2 + x2**2
+        fx = 0.26*(x1**2 + x2**2) - 0.48*x1*x2
         
         return(fx)
 
@@ -41,7 +41,7 @@ def plotcontour(lines = 20):
     cp = ax.contour(X, Y, Z, lines, cmap='RdGy')
     # ax.clabel(cp, inline=True, 
     #           fontsize=2)
-    ax.set_title('Contour Plot')
+    ax.set_title('Contour Plot (Matyas function)')
     ax.set_xlabel('x (cm)')
     ax.set_ylabel('y (cm)')
     plt.colorbar(cp)

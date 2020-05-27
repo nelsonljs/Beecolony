@@ -7,10 +7,10 @@ Created on Thu May 21 10:36:22 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-bounds = [-10, 10]
+bounds = [-100, 100]
 
 class testfunction:
-    # Circle function 2D
+    # Easom function 2D
     dims = 2
     bounds = bounds
     
@@ -18,7 +18,7 @@ class testfunction:
         # Static Method for Rastrigin function
         x1 = vector[0]
         x2 = vector[1]
-        fx = x1**2 + x2**2
+        fx = -1 * np.cos(x1) * np.cos(x2) * np.exp(-1*( (x1 - np.pi)**2 + (x2 - np.pi)**2))
         
         return(fx)
 

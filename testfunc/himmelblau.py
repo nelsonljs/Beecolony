@@ -7,10 +7,10 @@ Created on Thu May 21 10:36:22 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-bounds = [-10, 10]
+bounds = [-5, 5]
 
 class testfunction:
-    # Circle function 2D
+    # Himmelblau function 2D
     dims = 2
     bounds = bounds
     
@@ -18,15 +18,15 @@ class testfunction:
         # Static Method for Rastrigin function
         x1 = vector[0]
         x2 = vector[1]
-        fx = x1**2 + x2**2
+        fx = (x1**2 + x2 - 11)**2 + (x1 + x2**2 - 7)**2
         
         return(fx)
 
 def plotcontour(lines = 20):
     
     #contour plot
-    xlist = np.linspace(bounds[0],bounds[1], 200)
-    ylist = np.linspace(bounds[0],bounds[1], 200)
+    xlist = np.linspace(bounds[0],bounds[1], 400)
+    ylist = np.linspace(bounds[0],bounds[1], 400)
     
     X, Y = np.meshgrid(xlist, ylist)
 
@@ -41,7 +41,7 @@ def plotcontour(lines = 20):
     cp = ax.contour(X, Y, Z, lines, cmap='RdGy')
     # ax.clabel(cp, inline=True, 
     #           fontsize=2)
-    ax.set_title('Contour Plot')
+    ax.set_title('Contour Plot for Himmelblau Function')
     ax.set_xlabel('x (cm)')
     ax.set_ylabel('y (cm)')
     plt.colorbar(cp)
@@ -58,8 +58,8 @@ from mpl_toolkits.mplot3d import Axes3D
 def plotsurface():
     
     
-    xlist = np.linspace(bounds[0],bounds[1], 200)
-    ylist = np.linspace(bounds[0],bounds[1], 200)
+    xlist = np.linspace(bounds[0],bounds[1], 400)
+    ylist = np.linspace(bounds[0],bounds[1], 400)
     
     X, Y = np.meshgrid(xlist, ylist)
 

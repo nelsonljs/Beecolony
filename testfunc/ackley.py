@@ -7,10 +7,10 @@ Created on Thu May 21 10:36:22 2020
 import matplotlib.pyplot as plt
 import numpy as np
 
-bounds = [-10, 10]
+bounds = [-5, 5]
 
 class testfunction:
-    # Circle function 2D
+    # Ackley function 2D
     dims = 2
     bounds = bounds
     
@@ -18,15 +18,16 @@ class testfunction:
         # Static Method for Rastrigin function
         x1 = vector[0]
         x2 = vector[1]
-        fx = x1**2 + x2**2
+        fx = -20 * np.exp(-0.2*np.sqrt(0.5*(x1**2+x2**2))) - \
+            np.exp(0.5*(np.cos(2*np.pi*x1)+np.cos(2*np.pi*x2))) + np.exp(1) + 20
         
         return(fx)
 
 def plotcontour(lines = 20):
     
     #contour plot
-    xlist = np.linspace(bounds[0],bounds[1], 200)
-    ylist = np.linspace(bounds[0],bounds[1], 200)
+    xlist = np.linspace(bounds[0],bounds[1], 400)
+    ylist = np.linspace(bounds[0],bounds[1], 400)
     
     X, Y = np.meshgrid(xlist, ylist)
 
@@ -58,8 +59,8 @@ from mpl_toolkits.mplot3d import Axes3D
 def plotsurface():
     
     
-    xlist = np.linspace(bounds[0],bounds[1], 200)
-    ylist = np.linspace(bounds[0],bounds[1], 200)
+    xlist = np.linspace(bounds[0],bounds[1], 400)
+    ylist = np.linspace(bounds[0],bounds[1], 400)
     
     X, Y = np.meshgrid(xlist, ylist)
 
